@@ -7,14 +7,32 @@ var Animal = require("../models/model.js");
 
 // simple route to render am HTML form that can POST data to our server
 // NOTE that this is not a standard API route, and is really for testing
-router.get('/create-pet', function(req,res){
-  res.render('pet-form.html')
+router.get('/questions', function(req,res){
+  res.render('questions.html')
 })
 
 // simple route to render an HTML page that pulls data from our server and displays it on a page
 // NOTE that this is not a standard API route, and is really for testing
-router.get('/show-pets', function(req,res){
-  res.render('show-pets.html')
+router.get('/age-of-love', function(req,res){
+  res.render('age-of-love.html')
+})
+router.get('/feel-of-love', function(req,res){
+  res.render('feel-of-love.html')
+})
+router.get('/first-crush', function(req,res){
+  res.render('first-crush.html')
+})
+router.get('/first-love', function(req,res){
+  res.render('first-love.html')
+})
+router.get('/moment-of-love', function(req,res){
+  res.render('moment-of-love.html')
+})
+router.get('/romantic-love', function(req,res){
+  res.render('romantic-love.html')
+})
+router.get('/what-is-love', function(req,res){
+  res.render('what-is-love.html')
 })
 
 /**
