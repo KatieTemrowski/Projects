@@ -52,24 +52,28 @@ router.post('/api/create', function(req, res){
     console.log(req.body);
 
     // pull out the information from the req.body
-    var name = req.body.name;
+
     var age = req.body.age;
-    var tags = req.body.tags.split(","); // split string into array
-    var weight = req.body.weight;
-    var color = req.body.color;
-    var url = req.body.url;
+    var moment = req.body.moment.split(","); // split string into array
+    var firstcrush = req.body.firstcrush;
+    var agefirstlove = req.body.agefirstlove;
+    var firstlove = req.body.firstlove;
+    var feeloflove = req.body.feeloflove;
+    var whatislove = req.body.whatislove;
+    var romanticlove = req.body.romanticlove;
 
     // hold all this data in an object
     // this object should be structured the same way as your db model
     var animalObj = {
-      name: name,
       age: age,
-      tags: tags,
-      description: {
-        weight: weight,
-        color: color
-      },
-      url: url
+      moment: moment,
+      firstcrush: firstcrush,
+      agefirstlove: agefirstlove,
+      firstlove: firstlove,
+      feeloflove: feeloflove,
+      whatislove: whatislove,
+      romanticlove: romanticlove,
+
     };
 
     // create a new animal model instance, passing in the object
@@ -166,11 +170,11 @@ router.get('/api/get', function(req, res){
 router.get('/api/search', function(req,res){
 
   // first use req.query to pull out the search query
-  var searchTerm = req.query.name;
+  var searchTerm = req.query.feeloflove;
   console.log("we are searching for " + searchTerm);
 
   // let's find that animal
-  Animal.find({name: searchTerm}, function(err,data){
+  Animal.find({feeloflove: searchTerm}, function(err,data){
     // if err, respond with error 
     if(err){
       var error = {status:'ERROR', message: 'Something went wrong'};
@@ -208,47 +212,53 @@ router.post('/api/update/:id', function(req, res){
    var requestedId = req.params.id;
 
    var dataToUpdate = {}; // a blank object of data to update
-
     // pull out the information from the req.body and add it to the object to update
-    var name, age, weight, color, url; 
+    var age, moment, firstcrush, agefirstlove, firstlove, feeloflove, whatislove, romanticlove; 
 
     // we only want to update any field if it actually is contained within the req.body
     // otherwise, leave it alone.
-    if(req.body.name) {
-      name = req.body.name;
+    if(req.body.feeloflove) {
+      feeloflove = req.body.feeloflove;
       // add to object that holds updated data
-      dataToUpdate['name'] = name;
+      dataToUpdate['feeloflove'] = feeloflove;
     }
     if(req.body.age) {
       age = req.body.age;
       // add to object that holds updated data
       dataToUpdate['age'] = age;
     }
-    if(req.body.weight) {
-      weight = req.body.weight;
+    if(req.body.firstcrush) {
+      firstcrush = req.body.firstcrush;
       // add to object that holds updated data
-      dataToUpdate['description'] = {};
-      dataToUpdate['description']['weight'] = weight;
+      dataToUpdate['firstcrush'] = firstcrush;
     }
-    if(req.body.color) {
-      color = req.body.color;
+    if(req.body.agefirstlove) {
+      agefirstlove = req.body.agefirstlove;
       // add to object that holds updated data
-      if(!dataToUpdate['description']) dataToUpdate['description'] = {};
-      dataToUpdate['description']['color'] = color;
+      dataToUpdate['agefirstlove'] = agefirstlove;
     }
-    if(req.body.url) {
-      url = req.body.url;
+    if(req.body.firstlove) {
+      firstlove = req.body.firstlove;
       // add to object that holds updated data
-      dataToUpdate['url'] = url;
+      dataToUpdate['firstlove'] = firstlove;
+    }
+    if(req.body.firstlove) {
+      whatislove = req.body.whatislove;
+      // add to object that holds updated data
+      dataToUpdate['whatislove'] = whatislove;
+    }    
+    if(req.body.romanticlove) {
+      romanticlove = req.body.romanticlove;
+      // add to object that holds updated data
+      dataToUpdate['romanticlove'] = romanticlove;
     }
 
-    var tags = []; // blank array to hold tags
-    if(req.body.tags){
-      tags = req.body.tags.split(","); // split string into array
+    // var moment = []; // blank array to hold moment
+    if(req.body.moment){
+      // moment = req.body.moment.split(","); // split string into array
       // add to object that holds updated data
-      dataToUpdate['tags'] = tags;
+      dataToUpdate['moment'] = moment;
     }
-
 
     console.log('the data to update is ' + JSON.stringify(dataToUpdate));
 
