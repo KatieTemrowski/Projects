@@ -246,7 +246,7 @@ r.text(words[i].word, (125+Rune.random(1,600)),(10+Rune.random(1,600)))
   // .textDecoration("underline")
   .fontWeight("bold");
 }
-r.text("what is love", 600,600)
+r.text("what is love", 100,100)
   .fill(0)
   .stroke(false)
   .fontSize(20)

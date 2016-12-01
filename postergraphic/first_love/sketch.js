@@ -342,7 +342,7 @@ words = [{
 
 for (var i = 0; i<words.length; i++) {
 r.text(words[i].word, (125+Rune.random(1,600)),(10+Rune.random(1,600)))
-  .fill("#FA6CAC")
+  .fill("#F4144E")
   .stroke(false)
   .fontSize(words[i].size*10)
   .textAlign("center")
