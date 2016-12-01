@@ -67,7 +67,7 @@ router.get('/sample-page', function(req,res){
 
 router.post('/api/create', function(req, res){
 
-    console.log(req.body);
+    // console.log(req.body);
 
     // pull out the information from the req.body
 
@@ -106,15 +106,15 @@ router.post('/api/create', function(req, res){
         return res.json(error);
       }
 
-      console.log('saved a new animal!');
-      console.log(data);
+      // console.log('saved a new animal!');
+      // console.log(data);
 
       // now return the json data of the new animal
       var jsonData = {
         status: 'OK',
         animal: data
       }
-
+      var messageofviews = "now go visit http://memoriesoflove.herokuapp.com/first-love "
       return res.json(jsonData);
 
     })  
