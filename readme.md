@@ -10,11 +10,17 @@ go to https://memoriesoflove.herokuapp.com/ for the app
 
 https://memoriesoflove.herokuapp.com/questions << for the questionaire 
 
-for the different views for each 
+for the different views for each question:
 https://memoriesoflove.herokuapp.com/age-of-love
+
 https://memoriesoflove.herokuapp.com/feel-of-love
+
 https://memoriesoflove.herokuapp.com/first-crush
+
 https://memoriesoflove.herokuapp.com/first-love
+
 https://memoriesoflove.herokuapp.com/moment-of-love
+
 https://memoriesoflove.herokuapp.com/romantic-love
+
 https://memoriesoflove.herokuapp.com/what-is-love
